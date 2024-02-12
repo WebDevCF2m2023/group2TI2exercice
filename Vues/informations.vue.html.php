@@ -6,6 +6,6 @@
     <title>Informations</title>
 </head>
 <body>
-    
+ STYLE ME LATER PLS!
 </body>
 </html>

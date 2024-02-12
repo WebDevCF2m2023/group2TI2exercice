@@ -2,7 +2,11 @@
 
 // Chargement des dépendances
 
+
+
 // Connexion à la base de donnée
+
+require_once "../config.php";
 
 // Si le formulaire a été envoyé
 
@@ -14,3 +18,6 @@
 // on charge le template qui affiche la vue
 
 // on ferme la connexion 
+
+
+include_once "../Vues/informations.vue.html.php";
