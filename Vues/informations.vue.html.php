@@ -6,6 +6,10 @@
     <title>Informations</title>
 </head>
 <body>
-    
+    <?php foreach($informations as $information):?>
+        <div class="information">
+            <p><?=$information["thedate"]?>: <?=$information["themessage"]?></p>
+        </div>
+    <?php endforeach?>
 </body>
 </html>
