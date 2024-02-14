@@ -14,7 +14,9 @@
 
 
     <h1></h1>
-    <form action="" method="post" >
+
+    
+    <form action="informationsModel.php" method="post" >
     <div id="themail"><br><br>    
         <label for="nom">Mail</label>
         <input type="text" name="nom" id="nom"><br><br>
