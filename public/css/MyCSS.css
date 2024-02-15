@@ -1,1 +1,60 @@
-
+body {
+    background-color: #2b2d42;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    border-radius: 50px;
+    background-color: #8d99ae;
+    font-size: 1.5em;
+}
+.field:first-child {
+    margin-top: 50px;
+}
+.field:last-child {
+    margin-bottom: 50px;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 10px 0;
+}
+.field > input {
+    width: 100%;
+}
+input[type=submit] {
+    cursor: pointer;
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    color: rgb(192, 192, 192);
+    background-color: #ef233c;
+}
+input[type=submit]:hover {
+    background-color: #d90429;
+}
+#messages {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: auto;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #8d99ae;
+    font-size: 1.5em;
+}
+.message {
+    margin-left: 10%;
+}
+#erreur-message {
+    text-align: center;
+    color: #d90429;
+    font-size: 1.1em;
+}
