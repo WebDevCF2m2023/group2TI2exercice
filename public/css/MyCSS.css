@@ -1,1 +1,233 @@
+/*
+La mise en page va changer selon la largeur de l'écran:
+- pour des écrans inférieurs à 640px, tous les éléments seront sur une colonne et les labels des champs seront au-dessus des champs
+- pour des écrans entre 640px et 1200px, les éléments seont sur une colonne et les labels sont à côté des champs
+- pour des écrans au-dessus de 1200px, les éléments sont sur 2 colonnes
+    1ère colonne : nom, prénom, genre, langue
+    2ème colonne : message, case à cocher
+    le bouton en-dessous
+*/
 
+/* 
+Par défaut, les styles sont définis pour un smartphone - Largeur d'écran : max 640px
+*/
+
+/* Pour les écrans entre 640px et 1200px (tablette) */
+body{
+    background-color: aqua;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+h1 {
+    text-align: center;
+}
+
+label {
+    font-size: 1em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    background-color: darkgray;
+    padding: 1em 0;
+}
+
+input, textarea, select {
+    border-radius: 5px;
+}
+
+#lenom, #leprenom, #legenre, #lemessage, #username, #email, #ddn, #username, #password,#lalangue{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.3em;
+}
+
+#lergpd {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1.5em;
+}
+
+#rgpd {
+    margin-right: 1em;
+}
+
+input[type=text],input[type=date],input[type=email],input[type=password], textarea, select, #lergpd{
+    width:75vw;
+}
+
+input[type=submit]{
+    width: 100%;
+    height: 40px;
+}
+
+fieldset {
+    display: flex;
+    gap:4rem;
+}
+
+
+textarea {
+    resize: none;
+}
+
+.information:nth-child(odd){
+    background-color: #d4d4d4;
+}
+
+.information{
+    padding: 1rem;
+    border: 1px solid #202020;
+    margin: 1.5rem 0;
+}
+
+.information > div{
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid gray;
+    margin-bottom: 1rem;
+    padding: 0 2rem 1rem 2rem;
+}
+
+.information > div p{
+    flex-grow: 1;
+}
+
+.information > div p:first-child{
+    font-weight: bold;
+}
+
+.information > div p:not(:first-child){
+    text-align: right;
+}
+
+/*@media screen and (640px <= width <= 1200px) équivalent à */
+@media screen and (min-width:640px) and (max-width:1200px) {
+    form {
+        display: block;
+        width: 640px;
+        margin: auto;
+        border-radius: .5rem;
+        background: linear-gradient(45deg, rgba(32,32,32,1) 0%, rgba(48,48,48,1) 50%, rgba(64,64,64,1) 100%);
+    }
+    form > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    fieldset {
+        display: flex;
+        gap:4rem;
+        color: #ffffff;
+        border-color: rgb(254, 254, 254);
+        font-size:1.25rem;
+    }
+    label{
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 5px;
+    }
+    
+#envoi{
+    justify-content: center;
+}
+
+    input[type=text],input[type=date],input[type=email],input[type=password], textarea, select, #lergpd{
+        width: 500px;
+        padding: .25rem .50rem;
+        font-size: 1rem;
+    }
+   
+    input[type=submit]{
+        width: 350px;
+        font-size: 1.25rem;
+        border: 1px solid black;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        height: 55px;
+        box-shadow: 0 0 10px #f1f1f1;
+        font-weight: 600;
+    }
+    
+    textarea {
+        height: 5em;
+    }
+
+    #lergpd {
+        margin-left: 2em;
+    }
+  div#password{
+    justify-content: flex-start;
+  }
+}
+
+/* Pour les écrans au-dessus de 1200px (PC de bureau) */
+@media screen and (min-width:1201px) {
+    form {
+        display: block;
+        width: 1200px;
+        margin: auto;
+        border-radius: .5rem;
+        background: linear-gradient(45deg, rgba(32,32,32,1) 0%, rgba(48,48,48,1) 50%, rgba(64,64,64,1) 100%);
+    }
+    form > div{
+        display: flex;
+    }
+
+    fieldset {
+        display: flex;
+        gap:4rem;
+        color: #ffffff;
+        border-color: rgb(254, 254, 254);
+        font-size:1.25rem;
+    }
+    label{
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 5px;
+    }
+    
+#envoi{
+    justify-content: center;
+}
+
+    #colonne_gauche, #colonne_droite {
+        width:48vw;
+    }
+    input[type=text],input[type=date],input[type=email],input[type=password], textarea, select, #lergpd{
+        width: 500px;
+        padding: .25rem .50rem;
+        font-size: 1rem;
+    }
+   
+    input[type=submit]{
+        width: 350px;
+        font-size: 1.25rem;
+        border: 1px solid black;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        height: 55px;
+        box-shadow: 0 0 10px #f1f1f1;
+        font-weight: 600;
+    }
+    
+    textarea {
+        height: 5em;
+    }
+
+    #lergpd {
+        margin-left: 2em;
+    }
+  div#password{
+    justify-content: flex-start;
+  }
+
+}

@@ -1,4 +1,4 @@
-# Group2TI2exercice
+# Group2TI2exercice.
 
 ## Exercice
 
