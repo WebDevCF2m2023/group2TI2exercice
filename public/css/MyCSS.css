@@ -1,1 +1,199 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(../image/background.svg);
+}
 
+.main-container {
+    width: 800px;
+    height: 600px;
+    background-color: rgba(0, 0, 0, 0.312);
+}
+
+
+.message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    font-size: 3rem;
+    color: white;
+}
+
+.message2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    font-size: 2rem;
+    color: white;
+}
+
+.message3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5%;
+    font-size: 1rem;
+    color: white;
+}
+#second-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0%;
+    font-size: 1rem;
+    color: white;
+}
+
+.form-container {
+    position: relative;
+    top: 150px;
+    left: 3.2rem;
+    width: 700px;
+    height: 40%;
+    font-size: 1rem;
+    background-color: rgba(40, 39, 41, 0.838)
+}
+
+.input-age {
+    position: relative;
+    top: 6rem;
+    left: 13rem;
+    height: 15%;
+    width: 20%;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    background-color: rgba(16, 15, 21, 0.526);
+    border: 1px solid white;
+}
+
+.input-age:focus {
+    outline: solid 2px orangered;
+    border: none;
+}
+
+.confirm-age {
+    position: relative;
+    top: 6.1rem;
+    left: 13.2rem;
+    height: 15%;
+    width: 20%;
+    text-align: center;
+    font-size: 20px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px orangered;
+}
+
+.confirm-age:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px orangered;
+}
+
+.input-name {
+    position: relative;
+    top: 2rem;
+    left: 1rem;
+    height: 15%;
+    width: 20%;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    background-color: rgba(16, 15, 21, 0.526);
+    border: none;
+}
+
+.input-name:focus {
+    outline: solid 2px orangered;
+    border: none;
+    box-shadow: 0 0 10px orangered;
+}
+
+.label {
+    position: relative;
+    top: -0.5px;
+    left: 7.4rem;
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.input-password {
+    position: relative;
+    top: 3rem;
+    left: 6.8rem;
+    height: 15%;
+    width: 20%;
+    font-size: 1rem;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    color: white;
+    background-color: rgba(16, 15, 21, 0.526);
+    border: none;
+}
+
+.label-password{
+    position: relative;
+    top: 4.6rem;
+    right: 27rem;
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+.showPassButton {
+    position: absolute;
+    top: 8.5rem;
+    left: 16.1rem;
+    color: gray;
+    height: 9%;
+    width: 2%;
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    background-color: rgba(240, 255, 255, 0);
+    cursor: pointer;   
+}
+
+.confirm-form {
+    position: relative;
+    top: 9.2rem;
+    left: 5.0rem;
+    height: 15%;
+    width: 20%;
+    text-align: center;
+    font-size: 25px;
+    background-color: orangered;
+    color: white;
+    border: none;
+    box-shadow: 0 0 10px orangered;
+}
+
+.confirm-form:hover {
+    cursor: pointer;
+    box-shadow: 0 0 20px orangered;
+}
+
+.welcome-name {
+    position: relative;
+    top: -13rem;
+    left: -8rem;
+    height: 15%;
+    width: 20%;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
