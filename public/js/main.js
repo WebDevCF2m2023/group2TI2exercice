@@ -36,11 +36,11 @@ form.addEventListener('submit', function(event) {
         WelcomeMessage.innerHTML = 'Bienvenue <span style="color:green">' + getAllInfo()[0] + '</span>!';
 
         // Use Fetch API to submit the form
-        fetch(form.action, {
-            method: form.method,
-            body: new FormData(form)
+        fetch(form.action, { // form.action is the URL to submit the form to
+            method: form.method, // form.method is the HTTP method to use
+            body: new FormData(form) // new FormData(form) creates a FormData object from the form
         })
-        .then(function() {
+        .then(function() { // the fetch() promise resolves with the Response object
             // After the form is submitted, wait 2000ms and then navigate to the new page
             setTimeout(function() {
                 window.location.href = "?pg=getInfo";
