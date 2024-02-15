@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/css/MyCSS.css">
 </head>
 <body>
+    <p id="erreur-message"><?=$erreur_message?></p>
     <form action="./" method="post">
         <div class="field">
             <label for="email">email</label>

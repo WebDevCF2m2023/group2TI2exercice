@@ -9,9 +9,12 @@ $dsn = MY_DB_DRIVER.":host=".MY_DB_HOST.";dbname=".MY_DB_NAME.";charset=".MY_DB_
 $db_connect = new PDO($dsn, MY_DB_LOGIN, MY_DB_PWD);
 
 // Si le formulaire a été envoyé
+$erreur_message = "";
 if (!empty($_POST["mail"]) && !empty($_POST["message"])){
     // On insert dans la table `informations` si valide
-    addInformations($db_connect, $_POST["mail"], $_POST["message"]);
+    if (addInformations($db_connect, $_POST["mail"], $_POST["message"])){
+        $erreur_message = "erreur lors de l'insertion";
+    }
 }
 // `informations`
 $informations = getInformations($db_connect);

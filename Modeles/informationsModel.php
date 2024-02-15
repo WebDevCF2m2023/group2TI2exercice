@@ -11,9 +11,13 @@ function getInformations(PDO $db):array{
 // notre fonction qui insert dans informations
 function addInformations(PDO $db, string $mail, string $message){
     $sql = "INSERT INTO `informations`(`themail`, `themessage`) VALUES(?,?)";
+    if (!filter_var($mail, FILTER_VALIDATE_EMAIL)){
+        return 1;
+    }
     $prepare = $db->prepare($sql);
     $prepare->bindValue(1,htmlspecialchars($mail),PDO::PARAM_STR);
     $prepare->bindValue(2,htmlspecialchars($message),PDO::PARAM_STR);
     $prepare->execute();
     $prepare->closeCursor();
+    return 0;
 }

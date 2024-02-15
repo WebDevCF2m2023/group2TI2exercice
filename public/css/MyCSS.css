@@ -53,3 +53,8 @@ input[type=submit]:hover {
 .message {
     margin-left: 10%;
 }
+#erreur-message {
+    text-align: center;
+    color: #d90429;
+    font-size: 1.1em;
+}
