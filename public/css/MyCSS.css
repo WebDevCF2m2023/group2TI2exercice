@@ -77,6 +77,23 @@ body {
     border: none;
 }
 
+.input-message {
+    position: absolute;
+    top: 10rem;
+    left: 22.6rem;
+    height: 25%;
+    width: 30%;
+    font-size: 1rem;
+
+    color: white;
+    background-color: rgba(16, 15, 21, 0.526);
+    border: 1px solid white;
+}
+
+.input-message:placeholder-shown {
+    text-align: center;
+}
+
 .confirm-age {
     position: relative;
     top: 6.1rem;
@@ -137,6 +154,16 @@ body {
     font-size: 20px;
 }
 
+.label3 {
+    position: relative;
+    top: 7.5px;
+    left: 11.0rem;
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
 
 .input-password {
     position: relative;
@@ -182,7 +209,7 @@ body {
 .confirm-form {
     position: relative;
     top: 9.2rem;
-    left: 5.0rem;
+    left: 0.0rem;
     height: 15%;
     width: 20%;
     text-align: center;

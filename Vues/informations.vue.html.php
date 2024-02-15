@@ -21,7 +21,7 @@
 
             <form class="form-main" method="post" >
                 <label for="first-name" class="label1">First Name</label>
-                <input type="text" class="input-name" name="themessage" id="first-name" placeholder="First name">
+                <input type="text" class="input-name" id="first-name" placeholder="First name">
 
                 <label for="last-name" class="label2">E-Mail</label>
                 <input type="text" class="input-name" id="last-name" name="themail" placeholder="Email">
@@ -29,6 +29,9 @@
                 <button id="showPassButton" class="showPassButton" onclick="showPass()">👁</button>
                 <label for="user-password" class="label-password">Password</label>
                 <input type="password" class="input-password" id="user-password" placeholder="Password">
+
+                <label for="message" class="label3">Message</label>
+                <input type="text" class="input-message" id="message" name="themessage" placeholder="Message">
 
                 <input type="submit" value="Continue" class="confirm-form" id="confirm-form-submit">
 
