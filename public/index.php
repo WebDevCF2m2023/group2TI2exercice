@@ -14,6 +14,8 @@ if (!empty($_POST["mail"]) && !empty($_POST["message"])){
     // On insert dans la table `informations` si valide
     if (addInformations($db_connect, $_POST["mail"], $_POST["message"])){
         $erreur_message = "erreur lors de l'insertion";
+    }else{
+        header("Location: ./");
     }
 }
 // `informations`
