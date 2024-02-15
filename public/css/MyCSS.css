@@ -1,1 +1,93 @@
+/*
+La mise en page va changer selon la largeur de l'écran:
+- pour des écrans inférieurs à 640px, tous les éléments seront sur une colonne et les labels des champs seront au-dessus des champs
+- pour des écrans entre 640px et 1200px, les éléments seont sur une colonne et les labels sont à côté des champs
+- pour des écrans au-dessus de 1200px, les éléments sont sur 2 colonnes
+    1ère colonne : nom, prénom, genre, langue
+    2ème colonne : message, case à cocher
+    le bouton en-dessous
+*/
+ 
+/*
+Par défaut, les styles sont définis pour un smartphone - Largeur d'écran : max 640px
+*/
+ 
+/* Pour les écrans entre 640px et 1200px (tablette) */
+ 
+h1 {
+    text-align: center;
+}
+ 
+label {
+    font-size: 1em;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+ 
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    background: #403B4A;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E7E9BB, #403B4A);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4e4646, #4e4646); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+    padding: 1em 0;
+}
+
+
+ 
+input, textarea, select {
+    border-radius: 5px;
+}
+ 
+#lenom, #leprenom, #legenre, #lemessage, #lalangue {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+}
+ 
+#lergpd {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1em;
+}
+ 
+#rgpd {
+    margin-right: 1em;
+}
+ 
+input[type=text], textarea, select, #lergpd, input[type=submit] {
+    width:90vw;
+}
+ 
+fieldset {
+    display: flex;
+    gap: 1rem;
+}
+ 
+textarea {
+    resize: none;
+}
+ 
+/*@media screen and (640px <= width <= 1200px) équivalent à */
+@media screen and (min-width:640px) and (max-width:1200px) {
+    #lenom, #leprenom, #lalangue {
+        display: flex;
+        flex-direction: row;
+        width: 90vw;
+    }
+ 
+    #lenom label, #leprenom label, #lalangue label {
+        width: 10vw;
+        text-align: right;
+        margin-right: 0.5em;
+    }
+}
+ 
+/* Pour les écrans au-dessus de 1200px (PC de bureau) */
+@media screen and (min-width:1201px) {
+ 
+}
+Dispose d’un menu contextuel
