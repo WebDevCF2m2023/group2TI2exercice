@@ -1,46 +1,29 @@
+<!-- Vues/informations.vue.html.php -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informations</title>
+    <link rel="stylesheet" href="../public/css/MyCSS.css">
 </head>
 <body>
-    <?php foreach($informations as $information):?>
-        <div class="information">
-            <p><?=$information["thedate"]?>: <?=$information["themessage"]?></p>
-        </div>
-    <?php endforeach?>
-
-
-    <h1></h1>
-
-    
-    <form action="informationsModel.php" method="post" >
-    <div id="themail"><br><br>    
-        <label for="nom">Mail</label>
-        <input type="text" name="nom" id="nom"><br><br>
+    <div class="container">
+        <h1>Informations</h1>
+        <ul>
+            <?php foreach($informations as $info): ?>
+                <li><?php echo $info['themail']; ?> - <?php echo $info['themessage']; ?></li>
+            <?php endforeach; ?>
+        </ul>
+        <h2>Ajouter un nouvel article</h2>
+        <form action="../public/index.php" method="post">
+            <input type="hidden" name="action" value="addInformation">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" required></textarea><br>
+            <input type="submit" value="Ajouter">
+        </form>
     </div>
-
-
-    
-        
-   
-
-    <div id="themessage">
-        <label for="message">Message</label><br>
-        <textarea id="message" name="message" rows="10" cols="30" maxlength="1024"></textarea><br><br>
-        
-    </div>
-
-
-   
-
-    <div id="lesubmit">
-     <input type="submit" value="envoyer les données"><br><br>
-    </div> 
-    </form>
-    
-
 </body>
 </html>
