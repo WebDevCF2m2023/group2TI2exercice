@@ -16,6 +16,7 @@ if (!empty($_POST["mail"]) && !empty($_POST["message"])){
         $erreur_message = "erreur lors de l'insertion";
     }else{
         header("Location: ./");
+        die;
     }
 }
 // `informations`
