@@ -18,7 +18,8 @@ try{
 
 // on récupère toutes les entrées de la table
 // `informations`
-var_dump(getInformations($MyPDO));
+$informations = getInformations($MyPDO);
+$nbInformations = count($informations);
 
 // on charge le template qui affiche la vue
 include "../Vues/informations.vue.html.php";
