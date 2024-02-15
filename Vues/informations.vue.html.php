@@ -20,7 +20,15 @@
         <p><?=$information['themessage']?></p>
             <?php
         endforeach;
+        var_dump($_POST);
             ?>
+        </div>
+        <div>
+            <form action="" name="monForm" method="POST">
+                <input name="themail" type="email" placeholder="Votre mail" required><br>
+                <textarea name="themessage" placeholder="Votre message" required></textarea><br>
+                <input type="submit" value="Envoyer">
+            </form>
         </div>
     </div>
 </body>
