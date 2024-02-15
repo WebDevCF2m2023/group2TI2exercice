@@ -28,16 +28,24 @@ var form = document.querySelector('.form-main'); // select the form using its cl
 let WelcomeMessage = document.getElementById('welcomeName');
 
 form.addEventListener('submit', function(event) {
+    event.preventDefault(); // always prevent the default form submission
     getAllInfo();
-    event.preventDefault();  // Problem here with the form
 
     if(isValidPassword()) {
         alert("Bienvenue " + getAllInfo()[0] + "!");
         WelcomeMessage.innerHTML = 'Bienvenue <span style="color:green">' + getAllInfo()[0] + '</span>!';
-        setTimeout(function() {
-            form.submit(); // same here
-            window.location.href = "?pg=getInfo";
-        }, 2000);
+
+        // Use Fetch API to submit the form
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form)
+        })
+        .then(function() {
+            // After the form is submitted, wait 2000ms and then navigate to the new page
+            setTimeout(function() {
+                window.location.href = "?pg=getInfo";
+            }, 2000);
+        });
     } else {
         alert("Password is not valid - You need to have at least 10 letters - 1 uppercase letter - 1 number - 1 special symbol");
     }
