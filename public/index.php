@@ -3,6 +3,8 @@
 // Chargement des dépendances
 require_once "../config.php";
 require_once "../Modeles/informationsModel.php";
+// pagination (option)
+require_once "../Modeles/PaginationModel.php";
 // Connexion à la base de donnée en PDO
 
 try{
@@ -22,12 +24,26 @@ if(isset($_POST['themail'], $_POST['themessage'])){
    if($insert===true) $message = "Insertion réussie!";
    else $message = $insert;
 }
-    
+
+
+
+
+// nombre total d'informations
+$nbInformations = getNbInformations($MyPDO);
+
+// on veut une pagination
+if(!empty($_GET[PAGINATION_GET_NAME]) && ctype_digit($_GET[PAGINATION_GET_NAME])){
+    $page = (int) $_GET[PAGINATION_GET_NAME];
+}else{
+    $page = 1;
+}
 
 // on récupère toutes les entrées de la table
-// `informations`
-$informations = getInformations($MyPDO);
-$nbInformations = count($informations);
+// `informations` avec Pagination
+$informations = getPaginationInformations($MyPDO,$page,PAGINATION_NB_PAGE);
+ //var_dump($_GET);
+
+$pagination = PaginationModel("./",PAGINATION_GET_NAME,$nbInformations,$page,PAGINATION_NB_PAGE);
 
 // on charge le template qui affiche la vue
 include "../Vues/informations.vue.html.php";

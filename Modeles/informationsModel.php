@@ -9,6 +9,26 @@ function getInformations(PDO $db): array
     return $result;
 }
 
+// Notre fonction qui charge le nombre d'informations
+function getNbInformations(PDO $db): int
+{
+    $sql = "SELECT COUNT(*) as nb FROM `informations` ORDER BY `thedate` ASC ";
+    $query = $db->query($sql);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result['nb'];
+}
+// fonction qui charge les informations avec pagination
+function getPaginationInformations(PDO $db, int $currentPage,int $nbPerPage): array
+{
+    $offset = ($currentPage-1)*$nbPerPage;
+    $sql = "SELECT * FROM `informations` ORDER BY `thedate` ASC LIMIT $offset, $nbPerPage ";
+    $query = $db->query($sql);
+    $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    $query->closeCursor();
+    return $result;
+}
+
 // notre fonction qui insert dans informations
 function addInformations(PDO $db, string $email, string $message): bool|string
 {

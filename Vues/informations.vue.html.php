@@ -14,7 +14,11 @@
         echo $nbInformations>1 ? "$nbInformations commentaires" : "$nbInformations commentaire";
         ?></h3>
         <div>
+        <?php
+    if(isset($pagination)) echo "$pagination<hr>"; 
+    ?>
             <?php
+
         foreach($informations as $information):
             ?>
         <h4>Posté le <?=$information['thedate']?></h4>
