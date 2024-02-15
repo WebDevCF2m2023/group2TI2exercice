@@ -20,10 +20,10 @@
             <span class="message2">Fill all the fields to create a account!</span>
 
             <form class="form-main" method="post" >
-                <label for="first-name" class="label">First Name</label>
+                <label for="first-name" class="label1">First Name</label>
                 <input type="text" class="input-name" name="themessage" id="first-name" placeholder="First name">
 
-                <label for="last-name" class="label">E-Mail</label>
+                <label for="last-name" class="label2">E-Mail</label>
                 <input type="text" class="input-name" id="last-name" name="themail" placeholder="Email">
 
                 <button id="showPassButton" class="showPassButton" onclick="showPass()">👁</button>
@@ -42,4 +42,3 @@
 </body>
 
 </html>
-<?php var_dump($_POST);

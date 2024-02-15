@@ -117,7 +117,7 @@ body {
     box-shadow: 0 0 10px orangered;
 }
 
-.label {
+.label1 {
     position: relative;
     top: -0.5px;
     left: 7.4rem;
@@ -126,6 +126,17 @@ body {
     color: white;
     font-size: 20px;
 }
+
+.label2 {
+    position: relative;
+    top: -0.5px;
+    left: 5.5rem;
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
 
 .input-password {
     position: relative;
@@ -145,7 +156,7 @@ body {
 .label-password{
     position: relative;
     top: 4.6rem;
-    right: 27rem;
+    right: 25.2rem;
     width: 20%;
     text-align: center;
     color: white;
