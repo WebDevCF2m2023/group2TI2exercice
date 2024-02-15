@@ -1,1 +1,101 @@
+body {
+    
+    background-color:darkgrey;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 50%;
+    border-radius: 10px 100px / 120px;
+    box-shadow: 10px darkolivegreen;
+    background-color: bisque;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.field:first-child {
+    margin-top: 50px;
+    
+}
+.field:last-child {
+    margin-bottom: 50px;
+  
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 10px 0;
+    
+}
+.field > input {
+    width: 100%;
+    
+}
+input[type=submit] {
+    cursor: pointer;
+    align-self: center;
+    width: 50%;
+    padding: 10px;
+    border-style: dotted rgb(3, 3, 113);
+    border-radius: 15px;
+    color:rgb(236, 229, 189);
+    background-color: #1b386e;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    box-shadow: 10px rgb(91, 24, 111);
+    animation: wiggle 2s linear infinite;
+}
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  
+  
+  
+ 
+
+input[type=submit]:hover {
+    background-color: #1a0b5c;
+}
+#messages {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: auto;
+    margin-top: 30px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: #dbce93;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1em;
+   
+}
+.message {
+    margin-left: 10%;
+}
+
+
 
