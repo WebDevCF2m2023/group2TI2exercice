@@ -8,7 +8,11 @@ function getInformations(PDO $db):array{
     return $results;
 }
 
+
 // notre fonction qui insert dans informations
+
+
+
 function addInformations(PDO $db, string $mail, string $message){
     $sql = "INSERT INTO `informations`(`themail`, `themessage`) VALUES(?,?)";
     $prepare = $db->prepare($sql);
@@ -41,7 +45,7 @@ function addComments(PDO $db, string $mail, string $message): bool|string
         return false;
     }
     // on prépare la requête
-    $sql = "INSERT INTO comments (mail,message) VALUES ('$mail', '$message')";
+    $sql = "INSERT INTO comments (mail, message) VALUES ('$mail', '$message')";
     try {
         // on exécute la requête
         $db->exec($sql);

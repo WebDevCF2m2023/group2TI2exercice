@@ -27,6 +27,7 @@
         <div class="message">
             <h2><?=$information["thedate"]?></h2>
             <p><?=$information["themessage"]?></p>
+            <p><?=$information["themail"]?></p>
         </div>
     <?php endforeach?>
     </div>
