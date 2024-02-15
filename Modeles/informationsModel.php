@@ -29,4 +29,24 @@ function addInformations(PDO $db, string $email, string $message): bool|string
     }catch(Exception $e){
         return $e->getMessage();
     }
+    
+    // Entrées utilisateurs -> requêtes préparées
+    /*$sql = "INSERT INTO `informations` (`themail`,`themessage`) VALUES (?,?)";
+    $prepare = $db->prepare($sql);
+    $prepare->bindValue(1,$themail,PDO::PARAM_STR);
+    $prepare->bindValue(2,$themessage,PDO::PARAM_STR);
+    try{
+        $prepare->execute();
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }*/
+
+    /*$prepare = $db->prepare("INSERT INTO `informations` (`themail`,`themessage`) VALUES (?,?)");
+    try{
+        $prepare->execute([$themail,$themessage]);
+        return true;
+    }catch(Exception $e){
+        return $e->getMessage();
+    }*/
 }

@@ -21,7 +21,7 @@
         <p><?=$information['themessage']?></p>
             <?php
         endforeach;
-        var_dump($_POST);
+        //var_dump($_POST);
             ?>
         </div>
         <div>
