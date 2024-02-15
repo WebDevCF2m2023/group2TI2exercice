@@ -1,44 +1,23 @@
 <?php
-// public/index.php
 
-require_once "../Modeles/informationsModel.php";
+// Chargement des dépendances
+require_once("../config.php");
+require_once("../Modeles/informationsModel.php");
 
-// Créer une instance du modèle
-$informationsModel = new InformationsModel($db); // $db est votre connexion à la base de données
+// Connexion à la base de donnée
+$dsn = MY_DB_DRIVER.":host=".MY_DB_HOST.";dbname=".MY_DB_NAME.";charset=".MY_DB_CHARSET.";port=".MY_DB_PORT;
+$db_connect = new PDO($dsn, MY_DB_LOGIN, MY_DB_PWD);
 
-// Vérifier l'action à effectuer
-if(isset($_POST['action'])) {
-    $action = $_POST['action'];
-
-    if($action === 'addInformation') {
-        // Vérifier si les données du formulaire sont présentes
-        if(isset($_POST['email']) && isset($_POST['message'])) {
-            // Récupérer les données du formulaire
-            $email = $_POST['email'];
-            $message = $_POST['message'];
-
-            // Ajouter l'information en base de données
-            $result = $informationsModel->addInformations($email, $message);
-
-            // Vérifier si l'ajout a réussi
-            if($result) {
-                // Redirection vers la page d'accueil
-                header("Location: ../Vues/informations.vue.html.php");
-                exit();
-            } else {
-                // Afficher une erreur
-                echo "Une erreur est survenue lors de l'ajout de l'information.";
-            }
-        } else {
-            // Afficher une erreur si des champs sont manquants
-            echo "Tous les champs sont obligatoires.";
-        }
-    }
+// Si le formulaire a été envoyé
+if (!empty($_POST["mail"]) && !empty($_POST["message"])){
+    // On insert dans la table `informations` si valide
+    addInformations($db_connect, $_POST["mail"], $_POST["message"]);
 }
+// `informations`
+$informations = getInformations($db_connect);
 
-// Récupérer les informations à afficher
-$informations = $informationsModel->getInformations();
+// on charge le template qui affiche la vue
+include("../Vues/informations.vue.html.php");
 
-// Inclure la vue
-include "../Vues/informations.vue.html.php";
-?>
+// on ferme la connexion 
+$db_connect = null;

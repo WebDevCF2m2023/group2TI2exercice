@@ -1,29 +1,47 @@
-<!-- Vues/informations.vue.html.php -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informations</title>
-    <link rel="stylesheet" href="../public/css/MyCSS.css">
+    <link rel="stylesheet" href="/css/MyCSS.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Informations</h1>
-        <ul>
-            <?php foreach($informations as $info): ?>
-                <li><?php echo $info['themail']; ?> - <?php echo $info['themessage']; ?></li>
-            <?php endforeach; ?>
-        </ul>
-        <h2>Ajouter un nouvel article</h2>
-        <form action="../public/index.php" method="post">
-            <input type="hidden" name="action" value="addInformation">
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" required></textarea><br>
-            <input type="submit" value="Ajouter">
-        </form>
+
+<div class="cat">
+  <div class="ear ear--left"></div>
+  <div class="ear ear--right"></div>
+  <div class="face">
+    <div class="eye eye--left">
+      <div class="eye-pupil"></div>
+    </div>
+    <div class="eye eye--right">
+      <div class="eye-pupil"></div>
+    </div>
+    <div class="muzzle"></div>
+  </div>
+</div> 
+
+    <form action="./" method="post">
+        <div class="field">
+            <label for="email">Email</label>
+            <input type="email" name="mail" id="mail">
+        </div>
+        <div class="field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message"></textarea>
+        </div>
+        <div class="field">
+            <input type="submit" value="envoyer">
+        </div>
+    </form>
+    <div id="messages">
+    <?php foreach($informations as $information):?>
+        <div class="message">
+            <h2><?=$information["thedate"]?></h2>
+            <p><?=$information["themessage"]?></p>
+        </div>
+    <?php endforeach?>
     </div>
 </body>
 </html>
