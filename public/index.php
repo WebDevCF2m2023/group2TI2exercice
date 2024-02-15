@@ -25,3 +25,4 @@ $nbInformations = count($informations);
 include "../Vues/informations.vue.html.php";
 
 // on ferme la connexion 
+$MyPDO = null;
