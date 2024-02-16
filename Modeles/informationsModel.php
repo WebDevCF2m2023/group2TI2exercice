@@ -47,7 +47,7 @@ function addInformations(PDO $db, string $email, string $message): bool|string
         $db->exec($sql);
         return true;
     }catch(Exception $e){
-        return $e->getMessage();
+        return $e->getMessage(); 
     }
     
     // Entrées utilisateurs -> requêtes préparées

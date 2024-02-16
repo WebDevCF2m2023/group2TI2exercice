@@ -16,6 +16,7 @@
         <div>
         <?php
     if(isset($pagination)) echo "$pagination<hr>"; 
+    echo $pagination ?? null;
     ?>
             <?php
 
